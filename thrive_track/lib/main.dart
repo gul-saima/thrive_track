@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome_screen_v2.dart'; // import the file
+import 'screens/welcome_screen_v2.dart'; // import your screen file
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      home: MyApp(), // Root widget of the app
+      debugShowCheckedModeBanner: false, // optional: removes debug banner
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,9 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'ThriveTrack',
-      home: WelcomeScreenV2(), // using the class from another file
-    );
+    return const WelcomeScreenV2();
   }
 }
